@@ -45,7 +45,7 @@ class TestStringSort(unittest.TestCase):
 
     def test_single_element(self):
         """
-        Tests when only a single element exists in list
+        Tests when only a single element exists in list.
         """
         words = ["single"]
         insertion_sort(words)
