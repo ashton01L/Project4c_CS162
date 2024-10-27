@@ -11,8 +11,9 @@ def insertion_sort(a_list):
     for index in range(1, len(a_list)):
         value = a_list[index]
         pos = index - 1
-        # Compare lowercase versions of the strings for case-insensitive sorting
-        while pos >= 0 and a_list[pos].lower() > value.lower():
+        # Compare using lowercase for primary sort, and original for stability & case precedence
+        while pos >= 0 and (a_list[pos].lower() > value.lower() or
+                            (a_list[pos].lower() == value.lower() and a_list[pos] > value)):
             a_list[pos + 1] = a_list[pos]
             pos -= 1
         a_list[pos + 1] = value
